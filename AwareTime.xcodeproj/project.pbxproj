@@ -1,0 +1,1271 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26909B28E44C105B2F9B8B71 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D528A8F1341B57574CE74F8 /* AppGroup.swift */; };
+		BA5C27E6C832C8C12F9EA6B4 /* AwareTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3EC2724F9D84D9A230614 /* AwareTimeFormat.swift */; };
+		447692C8BED389BDBA1AFAFE /* InterventionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5649DE4BC7ECE1B08FB6A8CB /* InterventionLevel.swift */; };
+		AD6B4AB68905D8BCD11B531A /* InterventionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58D9C93F389F4B255B1C0 /* InterventionSettings.swift */; };
+		F3D04BCDDD11F03F40C05337 /* InterventionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5745CB22F97445D777FD1019 /* InterventionEvent.swift */; };
+		3F86E8C1ADEE1AAB7323788E /* DayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678C507700DE681116FE21E /* DayState.swift */; };
+		8EB14CFA921CF50D5A52862D /* MathChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793D8AD3BF2D3A65FD901AF3 /* MathChallenge.swift */; };
+		395C7C6594B093EDEEAD39EF /* ShieldPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3C50D342DA39E463B28D3 /* ShieldPresentation.swift */; };
+		B5BD1AED46F32CD15F3B8FE4 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB9A1095DA608D7DA07091 /* SharedStore.swift */; };
+		D0917D24D5BD68396942E6FF /* BrandPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565BAA74FE0603B57AB94C7 /* BrandPalette.swift */; };
+		E0C62122A75B07402B862828 /* AwareTimeActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CECC1C4140634E5ADB7066 /* AwareTimeActivityAttributes.swift */; };
+		BA5D717C928E720756C93EA9 /* LiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0A0C7F05E7AD34B23F804 /* LiveActivityController.swift */; };
+		A415494043373E579ED06E9D /* SelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308F89FAE7B7D9AF3ACD527 /* SelectionStore.swift */; };
+		4CCF956DABA3B07861951C05 /* ShieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1C65F09620B604F13793 /* ShieldController.swift */; };
+		EE1360409CCB93971E9ED9AA /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE453372AA7CC82AA95DDA /* NotificationScheduler.swift */; };
+		F7971A229B6E39BB3BA30E3E /* MonitoringPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A684242186467F70BD8CCCB /* MonitoringPlan.swift */; };
+		5947FDFF936D1CF23200C759 /* ReportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E116B804059DCEE2D418A /* ReportContext.swift */; };
+		12C43E256E3F85B2CEDF14E6 /* AwareTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF5FA54E4DE8251F34DD32 /* AwareTimeApp.swift */; };
+		89DF5EA96404D2CFC33EF4BD /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3983A8A15A56F33B18AD925 /* AuthorizationService.swift */; };
+		AC0A4E7BD1A986EA533E7080 /* MonitoringCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC13395A2670041AE6BAF4F /* MonitoringCoordinator.swift */; };
+		A4E8F76598325D62AAE792CA /* DemoModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8894CD45D946870EE137325 /* DemoModeController.swift */; };
+		A9EB85ABEC10678124CD57C4 /* UsageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2CCCD6437A2B818BE5E0FE /* UsageViewModel.swift */; };
+		35C28731371F674051AEDC09 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257649E9D2A8988777C57D7 /* RootView.swift */; };
+		1767E719456E76AD50DFF07F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419046C39D4675C773A47A0 /* OnboardingView.swift */; };
+		C421E300FE7CDA89CFDB4554 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F709FD9E3654C0240DE7E /* MainView.swift */; };
+		8A80A036D174DBBDAFA371EC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0672DD823AB5791392F05B42 /* SettingsView.swift */; };
+		D5256C5812AF6346E17780DD /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73E3C9AF8B63B154037AE71 /* HistoryView.swift */; };
+		E2450E99A99194300DA6D8D9 /* AppPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB5EDE6BCBC399D03A1DA3 /* AppPickerView.swift */; };
+		A1446C6B6A3ED097A8184D61 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA06EEC16AE174A9F80925F /* CardView.swift */; };
+		CCCB8CCA26837F35345108E0 /* StatusPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD953F12045A1BE796F5499 /* StatusPill.swift */; };
+		E8243C94C82DEFC7A20DB710 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE11C5B9798E25CD4A4B26DD /* BannerView.swift */; };
+		997464D98E194AC18AA4EED9 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2896033A03F3B246A4FF59F /* LadderView.swift */; };
+		970865B7DE2EE0E7C279821A /* ShieldPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041107A7982C8E127899347B /* ShieldPreviewView.swift */; };
+		5941A85C32CB4FF997FB28ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E05713CAE0C15B1354588158 /* Assets.xcassets */; };
+		55AD3242A93865E8109AA672 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D528A8F1341B57574CE74F8 /* AppGroup.swift */; };
+		F30076AD81A35E690DFE152C /* AwareTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3EC2724F9D84D9A230614 /* AwareTimeFormat.swift */; };
+		7B7E6F7A097220D5B186CA74 /* InterventionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5649DE4BC7ECE1B08FB6A8CB /* InterventionLevel.swift */; };
+		48678F748EA8B122229FB9B2 /* InterventionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58D9C93F389F4B255B1C0 /* InterventionSettings.swift */; };
+		68D5AB6AD4FD44C335FFE153 /* InterventionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5745CB22F97445D777FD1019 /* InterventionEvent.swift */; };
+		95807BC2256254291B8B1CD5 /* DayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678C507700DE681116FE21E /* DayState.swift */; };
+		7A5A5737CEAADE5DE0E1FA4B /* MathChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793D8AD3BF2D3A65FD901AF3 /* MathChallenge.swift */; };
+		DA421AB3D39A34C946CC3FD1 /* ShieldPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3C50D342DA39E463B28D3 /* ShieldPresentation.swift */; };
+		5ACA5FE88BBF38E573CAA9DB /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB9A1095DA608D7DA07091 /* SharedStore.swift */; };
+		DD4F90D614CEF94C55E95ABC /* AwareTimeActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CECC1C4140634E5ADB7066 /* AwareTimeActivityAttributes.swift */; };
+		C2EF2283AAF0249E1AAD99AF /* LiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0A0C7F05E7AD34B23F804 /* LiveActivityController.swift */; };
+		31674037213664AB4CCFF154 /* SelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308F89FAE7B7D9AF3ACD527 /* SelectionStore.swift */; };
+		331653919511758F1D7AD13F /* ShieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1C65F09620B604F13793 /* ShieldController.swift */; };
+		BA50E9AEC3EFAF91BFB0984E /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CE453372AA7CC82AA95DDA /* NotificationScheduler.swift */; };
+		86E7205381C3FC4551980E04 /* MonitoringPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A684242186467F70BD8CCCB /* MonitoringPlan.swift */; };
+		8225A27573D415793ADC9F09 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA397D1C9FC784754A174E86 /* DeviceActivityMonitorExtension.swift */; };
+		096674A0E41F8EF98BA35887 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D528A8F1341B57574CE74F8 /* AppGroup.swift */; };
+		25C024115A3EE2A5957FAE8C /* AwareTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3EC2724F9D84D9A230614 /* AwareTimeFormat.swift */; };
+		80A42667D416397897C33CE5 /* InterventionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5649DE4BC7ECE1B08FB6A8CB /* InterventionLevel.swift */; };
+		8B7E52571B24A5D8D94DB79E /* InterventionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58D9C93F389F4B255B1C0 /* InterventionSettings.swift */; };
+		EDAF895DC52F9BED96356C11 /* InterventionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5745CB22F97445D777FD1019 /* InterventionEvent.swift */; };
+		54750BE3BEC94C4E3A9E15B7 /* DayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678C507700DE681116FE21E /* DayState.swift */; };
+		730D248D4D3D9AB9155A4EB5 /* MathChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793D8AD3BF2D3A65FD901AF3 /* MathChallenge.swift */; };
+		C10BAB61B1D5CDFA252290C9 /* ShieldPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3C50D342DA39E463B28D3 /* ShieldPresentation.swift */; };
+		6F7AAEB869EBBB8BD1A7E3CE /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB9A1095DA608D7DA07091 /* SharedStore.swift */; };
+		C44AD5632969FBB37481556C /* BrandPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565BAA74FE0603B57AB94C7 /* BrandPalette.swift */; };
+		60CE0741D8B4337BDD24CD9A /* SelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308F89FAE7B7D9AF3ACD527 /* SelectionStore.swift */; };
+		0A45D9418A0718AA372D781D /* ShieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1C65F09620B604F13793 /* ShieldController.swift */; };
+		EFACECA0162423BB144E9618 /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61742158F6E8649EFD74564 /* ShieldConfigurationExtension.swift */; };
+		2B14C5ACF92B280F6EAE38C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC048C4083BB5CE25ABD83DD /* Assets.xcassets */; };
+		235948AEC874A2C577227E6F /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D528A8F1341B57574CE74F8 /* AppGroup.swift */; };
+		60AFF3EBCA7418B24A28C599 /* AwareTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3EC2724F9D84D9A230614 /* AwareTimeFormat.swift */; };
+		123C31CEBF9FC9E0B9EBB387 /* InterventionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5649DE4BC7ECE1B08FB6A8CB /* InterventionLevel.swift */; };
+		4F1217E94CABF78AAEE85838 /* InterventionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58D9C93F389F4B255B1C0 /* InterventionSettings.swift */; };
+		5646522552EBFB7158EEB264 /* InterventionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5745CB22F97445D777FD1019 /* InterventionEvent.swift */; };
+		F55DF73A64346B797ACA5F2C /* DayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678C507700DE681116FE21E /* DayState.swift */; };
+		5F903D427D3219AFD777FFD2 /* MathChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793D8AD3BF2D3A65FD901AF3 /* MathChallenge.swift */; };
+		477952F86824CE5A5B1E31A4 /* ShieldPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3C50D342DA39E463B28D3 /* ShieldPresentation.swift */; };
+		58A4E8593FD2F7EE6FE0D45B /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB9A1095DA608D7DA07091 /* SharedStore.swift */; };
+		3E14446273B7471EAFD76AAD /* AwareTimeActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CECC1C4140634E5ADB7066 /* AwareTimeActivityAttributes.swift */; };
+		5101F2C572E13283D2CF4C3B /* LiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0A0C7F05E7AD34B23F804 /* LiveActivityController.swift */; };
+		363BA14E8CCE5D21A31956A0 /* SelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308F89FAE7B7D9AF3ACD527 /* SelectionStore.swift */; };
+		FB25E0C0477A076AE1648AB2 /* ShieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1C65F09620B604F13793 /* ShieldController.swift */; };
+		6F02B57249998BFA0A5A9066 /* ShieldActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FFD9F74C2667E9BAF3F0FD /* ShieldActionExtension.swift */; };
+		E7415AD68F5A05ED4F69D06A /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D528A8F1341B57574CE74F8 /* AppGroup.swift */; };
+		D6BDB61908222BF64759371A /* AwareTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3EC2724F9D84D9A230614 /* AwareTimeFormat.swift */; };
+		9F1E97FCA2F00C5D39FC7331 /* InterventionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5649DE4BC7ECE1B08FB6A8CB /* InterventionLevel.swift */; };
+		D9E218A34C08ADB91E98C630 /* InterventionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58D9C93F389F4B255B1C0 /* InterventionSettings.swift */; };
+		87C815A7E94277E19F99F83A /* InterventionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5745CB22F97445D777FD1019 /* InterventionEvent.swift */; };
+		112B253C8444D56D55FA1976 /* DayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678C507700DE681116FE21E /* DayState.swift */; };
+		2EB28A8785ECE4BFC7317568 /* MathChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793D8AD3BF2D3A65FD901AF3 /* MathChallenge.swift */; };
+		4509CDFF35E815F010BDC94E /* ShieldPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3C50D342DA39E463B28D3 /* ShieldPresentation.swift */; };
+		C4ED8E6A003601ECA312B976 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB9A1095DA608D7DA07091 /* SharedStore.swift */; };
+		A90403745B824520BEDD7D88 /* BrandPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565BAA74FE0603B57AB94C7 /* BrandPalette.swift */; };
+		48BE885B329EE678F1A5D663 /* SelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308F89FAE7B7D9AF3ACD527 /* SelectionStore.swift */; };
+		2496215BA222EAF6D26B4181 /* ShieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1C65F09620B604F13793 /* ShieldController.swift */; };
+		3ACC26AF16B3AE5074CF37AA /* ReportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E116B804059DCEE2D418A /* ReportContext.swift */; };
+		BAB3D2FBCFEC786DD0141557 /* AwareTimeReportExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0886314C7EC5C11178647 /* AwareTimeReportExtension.swift */; };
+		A602396ED6CB727C0BD7F95C /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C27504F9CA5EEF228C3BC /* TotalActivityReport.swift */; };
+		CBDA5E327677F609135719EC /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6784D3DFABC19884BFA970F /* TotalActivityView.swift */; };
+		365B617154EC7965027B3A72 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D528A8F1341B57574CE74F8 /* AppGroup.swift */; };
+		A879745E80C70A039506128E /* AwareTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C3EC2724F9D84D9A230614 /* AwareTimeFormat.swift */; };
+		E31D83528DB3F6D18A754FD5 /* InterventionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5649DE4BC7ECE1B08FB6A8CB /* InterventionLevel.swift */; };
+		F8F6ACE1F95D11124399A152 /* InterventionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58D9C93F389F4B255B1C0 /* InterventionSettings.swift */; };
+		21725D60ED1BE5911C9ED124 /* InterventionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5745CB22F97445D777FD1019 /* InterventionEvent.swift */; };
+		C726C107FF44D4E0531110D4 /* DayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678C507700DE681116FE21E /* DayState.swift */; };
+		7C9F595B755542B41355E584 /* MathChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793D8AD3BF2D3A65FD901AF3 /* MathChallenge.swift */; };
+		66391A60FC25BFED0FB18400 /* ShieldPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3C50D342DA39E463B28D3 /* ShieldPresentation.swift */; };
+		2E952A6A22F9A83E5C2D49B0 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB9A1095DA608D7DA07091 /* SharedStore.swift */; };
+		46A717F3C52B6A4B417ED77B /* BrandPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565BAA74FE0603B57AB94C7 /* BrandPalette.swift */; };
+		AB37D6165E91CBB3E929C500 /* AwareTimeActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CECC1C4140634E5ADB7066 /* AwareTimeActivityAttributes.swift */; };
+		2994F7DFACAA1C175AE67D25 /* LiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D0A0C7F05E7AD34B23F804 /* LiveActivityController.swift */; };
+		5BB2D6C462A4B1502B4207D7 /* AwareTimeWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28CBDCA9CE820AF87C2C38F /* AwareTimeWidgetBundle.swift */; };
+		E86A9D6EF8F4DC94CCE78BDA /* AwareTimeLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3FCF837275B1E0D60E8856 /* AwareTimeLiveActivity.swift */; };
+		784FD718E193E875C6FBF6D4 /* AwareTimeStatusWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DD4CD63685A461184419C8 /* AwareTimeStatusWidget.swift */; };
+		850457EC377EB9FFA2369C8E /* WidgetBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9BF7DFB87E7B922BBC29BF /* WidgetBackground.swift */; };
+		6CD5B187D1E5078FE269AA05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27D5E9705F150578AAE0BE3 /* Assets.xcassets */; };
+		D59AE152F015E7023273A33C /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 44247DB7F317C90753A2D25F /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC671F307662122C9515AC21 /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 14C8C96450CDC5AB23DC9488 /* ShieldConfigurationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EFB042D3011CD62F886907F2 /* ShieldActionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B1B47A1182712A13647A14EE /* ShieldActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A830693F52C7F712F53B15CE /* DeviceActivityReportExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C3B18C2E7C4E7B0B9C372B0E /* DeviceActivityReportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A09A64435B49C07CE080DBA9 /* AwareTimeWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1E8B7E51D5C7DE438CAFECDF /* AwareTimeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BADCBA594DD6A9B56A49DA34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20483AE6F93A9E760D2C2872;
+			remoteInfo = DeviceActivityMonitorExtension;
+		};
+		96B2C67B0BCAA2C620E808E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F72699EE546ACCAD7A90F22;
+			remoteInfo = ShieldConfigurationExtension;
+		};
+		404AD4E494835E3AA493FE35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 076A1EF83BB9138BA8B67232;
+			remoteInfo = ShieldActionExtension;
+		};
+		1E8BE97B5AB21DDCB0852F8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2AD637E9957CCC416E0B76E;
+			remoteInfo = DeviceActivityReportExtension;
+		};
+		DC40AF2EA75F448E4A368A30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CE3220FDE3822107D54CA51;
+			remoteInfo = AwareTimeWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		425893CE4AEDF359C5F0F0D7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D59AE152F015E7023273A33C /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */,
+				FC671F307662122C9515AC21 /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */,
+				EFB042D3011CD62F886907F2 /* ShieldActionExtension.appex in Embed Foundation Extensions */,
+				A830693F52C7F712F53B15CE /* DeviceActivityReportExtension.appex in Embed Foundation Extensions */,
+				A09A64435B49C07CE080DBA9 /* AwareTimeWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E05713CAE0C15B1354588158 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC00792BD1836837897B8D83 /* AwareTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AwareTime.entitlements; sourceTree = "<group>"; };
+		3FCF5FA54E4DE8251F34DD32 /* AwareTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwareTimeApp.swift; sourceTree = "<group>"; };
+		574FC110B0A740707D6C6723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3983A8A15A56F33B18AD925 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		A8894CD45D946870EE137325 /* DemoModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoModeController.swift; sourceTree = "<group>"; };
+		CCC13395A2670041AE6BAF4F /* MonitoringCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringCoordinator.swift; sourceTree = "<group>"; };
+		CA2CCCD6437A2B818BE5E0FE /* UsageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageViewModel.swift; sourceTree = "<group>"; };
+		84DB5EDE6BCBC399D03A1DA3 /* AppPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPickerView.swift; sourceTree = "<group>"; };
+		FE11C5B9798E25CD4A4B26DD /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		1DA06EEC16AE174A9F80925F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E2896033A03F3B246A4FF59F /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
+		041107A7982C8E127899347B /* ShieldPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldPreviewView.swift; sourceTree = "<group>"; };
+		FFD953F12045A1BE796F5499 /* StatusPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPill.swift; sourceTree = "<group>"; };
+		C73E3C9AF8B63B154037AE71 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		EC2F709FD9E3654C0240DE7E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E419046C39D4675C773A47A0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		3257649E9D2A8988777C57D7 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		0672DD823AB5791392F05B42 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B27D5E9705F150578AAE0BE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED3FCF837275B1E0D60E8856 /* AwareTimeLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwareTimeLiveActivity.swift; sourceTree = "<group>"; };
+		19DD4CD63685A461184419C8 /* AwareTimeStatusWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwareTimeStatusWidget.swift; sourceTree = "<group>"; };
+		1875A6E890B62A74A230E671 /* AwareTimeWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AwareTimeWidget.entitlements; sourceTree = "<group>"; };
+		E28CBDCA9CE820AF87C2C38F /* AwareTimeWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwareTimeWidgetBundle.swift; sourceTree = "<group>"; };
+		8E1C5989FE38266A0A6F648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF9BF7DFB87E7B922BBC29BF /* WidgetBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBackground.swift; sourceTree = "<group>"; };
+		9826992B8B8F1216B80FBCE7 /* DeviceActivityMonitorExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeviceActivityMonitorExtension.entitlements; sourceTree = "<group>"; };
+		BA397D1C9FC784754A174E86 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
+		349B16FE90D652C8AAD5BF55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAC0886314C7EC5C11178647 /* AwareTimeReportExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwareTimeReportExtension.swift; sourceTree = "<group>"; };
+		5D86F5CBA7ACEC7C6712589C /* DeviceActivityReportExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeviceActivityReportExtension.entitlements; sourceTree = "<group>"; };
+		34B92EA3105B11DA538B3D64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E3C27504F9CA5EEF228C3BC /* TotalActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityReport.swift; sourceTree = "<group>"; };
+		A6784D3DFABC19884BFA970F /* TotalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityView.swift; sourceTree = "<group>"; };
+		07CECC1C4140634E5ADB7066 /* AwareTimeActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwareTimeActivityAttributes.swift; sourceTree = "<group>"; };
+		87D0A0C7F05E7AD34B23F804 /* LiveActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityController.swift; sourceTree = "<group>"; };
+		4678C507700DE681116FE21E /* DayState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayState.swift; sourceTree = "<group>"; };
+		5745CB22F97445D777FD1019 /* InterventionEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterventionEvent.swift; sourceTree = "<group>"; };
+		5649DE4BC7ECE1B08FB6A8CB /* InterventionLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterventionLevel.swift; sourceTree = "<group>"; };
+		F1D58D9C93F389F4B255B1C0 /* InterventionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterventionSettings.swift; sourceTree = "<group>"; };
+		793D8AD3BF2D3A65FD901AF3 /* MathChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathChallenge.swift; sourceTree = "<group>"; };
+		88F3C50D342DA39E463B28D3 /* ShieldPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldPresentation.swift; sourceTree = "<group>"; };
+		2A684242186467F70BD8CCCB /* MonitoringPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringPlan.swift; sourceTree = "<group>"; };
+		93CE453372AA7CC82AA95DDA /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		4F4E116B804059DCEE2D418A /* ReportContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportContext.swift; sourceTree = "<group>"; };
+		7C9F1C65F09620B604F13793 /* ShieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldController.swift; sourceTree = "<group>"; };
+		B308F89FAE7B7D9AF3ACD527 /* SelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionStore.swift; sourceTree = "<group>"; };
+		17EB9A1095DA608D7DA07091 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		2D528A8F1341B57574CE74F8 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		31C3EC2724F9D84D9A230614 /* AwareTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwareTimeFormat.swift; sourceTree = "<group>"; };
+		7565BAA74FE0603B57AB94C7 /* BrandPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandPalette.swift; sourceTree = "<group>"; };
+		CCBF708F57A32196CE5C2A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC4168525BDA3F5FE70A4A89 /* ShieldActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShieldActionExtension.entitlements; sourceTree = "<group>"; };
+		A0FFD9F74C2667E9BAF3F0FD /* ShieldActionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldActionExtension.swift; sourceTree = "<group>"; };
+		AC048C4083BB5CE25ABD83DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		136B0DD716F8F31CE3E5120F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B95C6BC386C57F5E4F52B6D9 /* ShieldConfigurationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShieldConfigurationExtension.entitlements; sourceTree = "<group>"; };
+		D61742158F6E8649EFD74564 /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
+		5891359522A4F8A13C99D5D5 /* AwareTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwareTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44247DB7F317C90753A2D25F /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C8C96450CDC5AB23DC9488 /* ShieldConfigurationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldConfigurationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1B47A1182712A13647A14EE /* ShieldActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3B18C2E7C4E7B0B9C372B0E /* DeviceActivityReportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeviceActivityReportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E8B7E51D5C7DE438CAFECDF /* AwareTimeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AwareTimeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C5FDCD8815626DD3FD8F8F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A64F4C658F8EA244B3B06EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08A56E2CAB5BA571E412437D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAAA93A75A356E52CC9E0D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B8C46729BE413225318A01E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26D64B9C4A1C44F9D19E7B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00355AB3B113680E1CFD41EC /* AwareTime */ = {
+			isa = PBXGroup;
+			children = (
+				2ADFF29F8B3D47D72CC93372 /* AwareTime */,
+				66BED8A767688A4B5E3869B5 /* AwareTimeWidget */,
+				4F49EF122492508ED137F80D /* DeviceActivityMonitorExtension */,
+				7FE3E08D4422C2D05083022A /* DeviceActivityReportExtension */,
+				CE2DBE9136DF347F619D3987 /* Shared */,
+				88D22682A6535925EDB2247B /* ShieldActionExtension */,
+				6860431E76E0C34B12DF5C05 /* ShieldConfigurationExtension */,
+				2F3A6B1E78F896718625FF06 /* Products */,
+			);
+			name = AwareTime;
+			sourceTree = "<group>";
+		};
+		2ADFF29F8B3D47D72CC93372 /* AwareTime */ = {
+			isa = PBXGroup;
+			children = (
+				056406955A770977FC195742 /* Services */,
+				9A7DC95E2BCFC4BE94F6709E /* ViewModels */,
+				F68FA068DDB963E27F14E1EB /* Views */,
+				E05713CAE0C15B1354588158 /* Assets.xcassets */,
+				CC00792BD1836837897B8D83 /* AwareTime.entitlements */,
+				3FCF5FA54E4DE8251F34DD32 /* AwareTimeApp.swift */,
+				574FC110B0A740707D6C6723 /* Info.plist */,
+			);
+			path = AwareTime;
+			sourceTree = "<group>";
+		};
+		056406955A770977FC195742 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B3983A8A15A56F33B18AD925 /* AuthorizationService.swift */,
+				A8894CD45D946870EE137325 /* DemoModeController.swift */,
+				CCC13395A2670041AE6BAF4F /* MonitoringCoordinator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9A7DC95E2BCFC4BE94F6709E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CA2CCCD6437A2B818BE5E0FE /* UsageViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F68FA068DDB963E27F14E1EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20A48C31B52722D7E6CAE267 /* Components */,
+				84DB5EDE6BCBC399D03A1DA3 /* AppPickerView.swift */,
+				C73E3C9AF8B63B154037AE71 /* HistoryView.swift */,
+				EC2F709FD9E3654C0240DE7E /* MainView.swift */,
+				E419046C39D4675C773A47A0 /* OnboardingView.swift */,
+				3257649E9D2A8988777C57D7 /* RootView.swift */,
+				0672DD823AB5791392F05B42 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		20A48C31B52722D7E6CAE267 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FE11C5B9798E25CD4A4B26DD /* BannerView.swift */,
+				1DA06EEC16AE174A9F80925F /* CardView.swift */,
+				E2896033A03F3B246A4FF59F /* LadderView.swift */,
+				041107A7982C8E127899347B /* ShieldPreviewView.swift */,
+				FFD953F12045A1BE796F5499 /* StatusPill.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		66BED8A767688A4B5E3869B5 /* AwareTimeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				B27D5E9705F150578AAE0BE3 /* Assets.xcassets */,
+				ED3FCF837275B1E0D60E8856 /* AwareTimeLiveActivity.swift */,
+				19DD4CD63685A461184419C8 /* AwareTimeStatusWidget.swift */,
+				1875A6E890B62A74A230E671 /* AwareTimeWidget.entitlements */,
+				E28CBDCA9CE820AF87C2C38F /* AwareTimeWidgetBundle.swift */,
+				8E1C5989FE38266A0A6F648A /* Info.plist */,
+				FF9BF7DFB87E7B922BBC29BF /* WidgetBackground.swift */,
+			);
+			path = AwareTimeWidget;
+			sourceTree = "<group>";
+		};
+		4F49EF122492508ED137F80D /* DeviceActivityMonitorExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9826992B8B8F1216B80FBCE7 /* DeviceActivityMonitorExtension.entitlements */,
+				BA397D1C9FC784754A174E86 /* DeviceActivityMonitorExtension.swift */,
+				349B16FE90D652C8AAD5BF55 /* Info.plist */,
+			);
+			path = DeviceActivityMonitorExtension;
+			sourceTree = "<group>";
+		};
+		7FE3E08D4422C2D05083022A /* DeviceActivityReportExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CAC0886314C7EC5C11178647 /* AwareTimeReportExtension.swift */,
+				5D86F5CBA7ACEC7C6712589C /* DeviceActivityReportExtension.entitlements */,
+				34B92EA3105B11DA538B3D64 /* Info.plist */,
+				8E3C27504F9CA5EEF228C3BC /* TotalActivityReport.swift */,
+				A6784D3DFABC19884BFA970F /* TotalActivityView.swift */,
+			);
+			path = DeviceActivityReportExtension;
+			sourceTree = "<group>";
+		};
+		CE2DBE9136DF347F619D3987 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				36CA2D63C6BFAB2390BFFBED /* LiveActivity */,
+				C61A102EE6B8E955747DC137 /* Models */,
+				E4640C2817699854A45DF1E8 /* Services */,
+				E82A9B475747F7CD9A61B5CD /* Store */,
+				D6E73D672BEB6C8C49CBE160 /* Support */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		36CA2D63C6BFAB2390BFFBED /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				07CECC1C4140634E5ADB7066 /* AwareTimeActivityAttributes.swift */,
+				87D0A0C7F05E7AD34B23F804 /* LiveActivityController.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+		C61A102EE6B8E955747DC137 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4678C507700DE681116FE21E /* DayState.swift */,
+				5745CB22F97445D777FD1019 /* InterventionEvent.swift */,
+				5649DE4BC7ECE1B08FB6A8CB /* InterventionLevel.swift */,
+				F1D58D9C93F389F4B255B1C0 /* InterventionSettings.swift */,
+				793D8AD3BF2D3A65FD901AF3 /* MathChallenge.swift */,
+				88F3C50D342DA39E463B28D3 /* ShieldPresentation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E4640C2817699854A45DF1E8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2A684242186467F70BD8CCCB /* MonitoringPlan.swift */,
+				93CE453372AA7CC82AA95DDA /* NotificationScheduler.swift */,
+				4F4E116B804059DCEE2D418A /* ReportContext.swift */,
+				7C9F1C65F09620B604F13793 /* ShieldController.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E82A9B475747F7CD9A61B5CD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B308F89FAE7B7D9AF3ACD527 /* SelectionStore.swift */,
+				17EB9A1095DA608D7DA07091 /* SharedStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		D6E73D672BEB6C8C49CBE160 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2D528A8F1341B57574CE74F8 /* AppGroup.swift */,
+				31C3EC2724F9D84D9A230614 /* AwareTimeFormat.swift */,
+				7565BAA74FE0603B57AB94C7 /* BrandPalette.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		88D22682A6535925EDB2247B /* ShieldActionExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CCBF708F57A32196CE5C2A41 /* Info.plist */,
+				BC4168525BDA3F5FE70A4A89 /* ShieldActionExtension.entitlements */,
+				A0FFD9F74C2667E9BAF3F0FD /* ShieldActionExtension.swift */,
+			);
+			path = ShieldActionExtension;
+			sourceTree = "<group>";
+		};
+		6860431E76E0C34B12DF5C05 /* ShieldConfigurationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AC048C4083BB5CE25ABD83DD /* Assets.xcassets */,
+				136B0DD716F8F31CE3E5120F /* Info.plist */,
+				B95C6BC386C57F5E4F52B6D9 /* ShieldConfigurationExtension.entitlements */,
+				D61742158F6E8649EFD74564 /* ShieldConfigurationExtension.swift */,
+			);
+			path = ShieldConfigurationExtension;
+			sourceTree = "<group>";
+		};
+		2F3A6B1E78F896718625FF06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5891359522A4F8A13C99D5D5 /* AwareTime.app */,
+				44247DB7F317C90753A2D25F /* DeviceActivityMonitorExtension.appex */,
+				14C8C96450CDC5AB23DC9488 /* ShieldConfigurationExtension.appex */,
+				B1B47A1182712A13647A14EE /* ShieldActionExtension.appex */,
+				C3B18C2E7C4E7B0B9C372B0E /* DeviceActivityReportExtension.appex */,
+				1E8B7E51D5C7DE438CAFECDF /* AwareTimeWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD7188DEB9A1EC9EE88E671B /* AwareTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B9A8849F71AFEBB155ED67F /* Build configuration list for PBXNativeTarget "AwareTime" */;
+			buildPhases = (
+				F43A53EF8255A6EF04A559CF /* Sources */,
+				4C5FDCD8815626DD3FD8F8F3 /* Frameworks */,
+				2CEA4FFD6928B2063556F13C /* Resources */,
+				425893CE4AEDF359C5F0F0D7 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9306D59C370EC0A408469083 /* PBXTargetDependency */,
+				ED8D2BC7CB62930149152285 /* PBXTargetDependency */,
+				03BDA00A5B95EB018AC71E4C /* PBXTargetDependency */,
+				6D1FF8EB8127925B0E7E2FA3 /* PBXTargetDependency */,
+				E9F1453076FBDE956A238A56 /* PBXTargetDependency */,
+			);
+			name = AwareTime;
+			productName = AwareTime;
+			productReference = 5891359522A4F8A13C99D5D5 /* AwareTime.app */;
+			productType = com.apple.product-type.application;
+		};
+		20483AE6F93A9E760D2C2872 /* DeviceActivityMonitorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 792FDF21AB7093E1FF8B6264 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */;
+			buildPhases = (
+				369EE994F3593F024E127701 /* Sources */,
+				A64F4C658F8EA244B3B06EDA /* Frameworks */,
+				B831BF30832FE7436DE5C451 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeviceActivityMonitorExtension;
+			productName = DeviceActivityMonitorExtension;
+			productReference = 44247DB7F317C90753A2D25F /* DeviceActivityMonitorExtension.appex */;
+			productType = com.apple.product-type.app-extension;
+		};
+		1F72699EE546ACCAD7A90F22 /* ShieldConfigurationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 494CF84CACC2CF4322251C43 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */;
+			buildPhases = (
+				EAA908C4F7368E1F0984F1EB /* Sources */,
+				08A56E2CAB5BA571E412437D /* Frameworks */,
+				B241C1FC6B0223D6CB21FC6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShieldConfigurationExtension;
+			productName = ShieldConfigurationExtension;
+			productReference = 14C8C96450CDC5AB23DC9488 /* ShieldConfigurationExtension.appex */;
+			productType = com.apple.product-type.app-extension;
+		};
+		076A1EF83BB9138BA8B67232 /* ShieldActionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B576B847E208F156BD85364 /* Build configuration list for PBXNativeTarget "ShieldActionExtension" */;
+			buildPhases = (
+				6A2D091EDBE7B209A3E1E1AF /* Sources */,
+				CAAA93A75A356E52CC9E0D3B /* Frameworks */,
+				111CA81C6B0A15580602AFDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShieldActionExtension;
+			productName = ShieldActionExtension;
+			productReference = B1B47A1182712A13647A14EE /* ShieldActionExtension.appex */;
+			productType = com.apple.product-type.app-extension;
+		};
+		C2AD637E9957CCC416E0B76E /* DeviceActivityReportExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96DED87C7E5910D64F2D273A /* Build configuration list for PBXNativeTarget "DeviceActivityReportExtension" */;
+			buildPhases = (
+				B668D91419A4A86A14196493 /* Sources */,
+				8B8C46729BE413225318A01E /* Frameworks */,
+				FC6860179D6AAE67EA7BE923 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeviceActivityReportExtension;
+			productName = DeviceActivityReportExtension;
+			productReference = C3B18C2E7C4E7B0B9C372B0E /* DeviceActivityReportExtension.appex */;
+			productType = com.apple.product-type.app-extension;
+		};
+		4CE3220FDE3822107D54CA51 /* AwareTimeWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22913D2EEFC00B55A7415FF2 /* Build configuration list for PBXNativeTarget "AwareTimeWidget" */;
+			buildPhases = (
+				A1D158CAE5422B6E86049FE6 /* Sources */,
+				F26D64B9C4A1C44F9D19E7B1 /* Frameworks */,
+				47CA4C3EC1378F354082E1EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AwareTimeWidget;
+			productName = AwareTimeWidget;
+			productReference = 1E8B7E51D5C7DE438CAFECDF /* AwareTimeWidget.appex */;
+			productType = com.apple.product-type.app-extension;
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F86FAA6BBF9AC94A7E4595 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					AD7188DEB9A1EC9EE88E671B = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					20483AE6F93A9E760D2C2872 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					1F72699EE546ACCAD7A90F22 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					076A1EF83BB9138BA8B67232 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					C2AD637E9957CCC416E0B76E = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					4CE3220FDE3822107D54CA51 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 1F4E3D13C2320EDA50221924 /* Build configuration list for PBXProject "AwareTime" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				vi,
+				Base,
+			);
+			mainGroup = 00355AB3B113680E1CFD41EC;
+			productRefGroup = 2F3A6B1E78F896718625FF06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD7188DEB9A1EC9EE88E671B /* AwareTime */,
+				20483AE6F93A9E760D2C2872 /* DeviceActivityMonitorExtension */,
+				1F72699EE546ACCAD7A90F22 /* ShieldConfigurationExtension */,
+				076A1EF83BB9138BA8B67232 /* ShieldActionExtension */,
+				C2AD637E9957CCC416E0B76E /* DeviceActivityReportExtension */,
+				4CE3220FDE3822107D54CA51 /* AwareTimeWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CEA4FFD6928B2063556F13C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5941A85C32CB4FF997FB28ED /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B831BF30832FE7436DE5C451 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B241C1FC6B0223D6CB21FC6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B14C5ACF92B280F6EAE38C2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		111CA81C6B0A15580602AFDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC6860179D6AAE67EA7BE923 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47CA4C3EC1378F354082E1EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CD5B187D1E5078FE269AA05 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F43A53EF8255A6EF04A559CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26909B28E44C105B2F9B8B71 /* AppGroup.swift in Sources */,
+				BA5C27E6C832C8C12F9EA6B4 /* AwareTimeFormat.swift in Sources */,
+				447692C8BED389BDBA1AFAFE /* InterventionLevel.swift in Sources */,
+				AD6B4AB68905D8BCD11B531A /* InterventionSettings.swift in Sources */,
+				F3D04BCDDD11F03F40C05337 /* InterventionEvent.swift in Sources */,
+				3F86E8C1ADEE1AAB7323788E /* DayState.swift in Sources */,
+				8EB14CFA921CF50D5A52862D /* MathChallenge.swift in Sources */,
+				395C7C6594B093EDEEAD39EF /* ShieldPresentation.swift in Sources */,
+				B5BD1AED46F32CD15F3B8FE4 /* SharedStore.swift in Sources */,
+				D0917D24D5BD68396942E6FF /* BrandPalette.swift in Sources */,
+				E0C62122A75B07402B862828 /* AwareTimeActivityAttributes.swift in Sources */,
+				BA5D717C928E720756C93EA9 /* LiveActivityController.swift in Sources */,
+				A415494043373E579ED06E9D /* SelectionStore.swift in Sources */,
+				4CCF956DABA3B07861951C05 /* ShieldController.swift in Sources */,
+				EE1360409CCB93971E9ED9AA /* NotificationScheduler.swift in Sources */,
+				F7971A229B6E39BB3BA30E3E /* MonitoringPlan.swift in Sources */,
+				5947FDFF936D1CF23200C759 /* ReportContext.swift in Sources */,
+				12C43E256E3F85B2CEDF14E6 /* AwareTimeApp.swift in Sources */,
+				89DF5EA96404D2CFC33EF4BD /* AuthorizationService.swift in Sources */,
+				AC0A4E7BD1A986EA533E7080 /* MonitoringCoordinator.swift in Sources */,
+				A4E8F76598325D62AAE792CA /* DemoModeController.swift in Sources */,
+				A9EB85ABEC10678124CD57C4 /* UsageViewModel.swift in Sources */,
+				35C28731371F674051AEDC09 /* RootView.swift in Sources */,
+				1767E719456E76AD50DFF07F /* OnboardingView.swift in Sources */,
+				C421E300FE7CDA89CFDB4554 /* MainView.swift in Sources */,
+				8A80A036D174DBBDAFA371EC /* SettingsView.swift in Sources */,
+				D5256C5812AF6346E17780DD /* HistoryView.swift in Sources */,
+				E2450E99A99194300DA6D8D9 /* AppPickerView.swift in Sources */,
+				A1446C6B6A3ED097A8184D61 /* CardView.swift in Sources */,
+				CCCB8CCA26837F35345108E0 /* StatusPill.swift in Sources */,
+				E8243C94C82DEFC7A20DB710 /* BannerView.swift in Sources */,
+				997464D98E194AC18AA4EED9 /* LadderView.swift in Sources */,
+				970865B7DE2EE0E7C279821A /* ShieldPreviewView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		369EE994F3593F024E127701 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55AD3242A93865E8109AA672 /* AppGroup.swift in Sources */,
+				F30076AD81A35E690DFE152C /* AwareTimeFormat.swift in Sources */,
+				7B7E6F7A097220D5B186CA74 /* InterventionLevel.swift in Sources */,
+				48678F748EA8B122229FB9B2 /* InterventionSettings.swift in Sources */,
+				68D5AB6AD4FD44C335FFE153 /* InterventionEvent.swift in Sources */,
+				95807BC2256254291B8B1CD5 /* DayState.swift in Sources */,
+				7A5A5737CEAADE5DE0E1FA4B /* MathChallenge.swift in Sources */,
+				DA421AB3D39A34C946CC3FD1 /* ShieldPresentation.swift in Sources */,
+				5ACA5FE88BBF38E573CAA9DB /* SharedStore.swift in Sources */,
+				DD4F90D614CEF94C55E95ABC /* AwareTimeActivityAttributes.swift in Sources */,
+				C2EF2283AAF0249E1AAD99AF /* LiveActivityController.swift in Sources */,
+				31674037213664AB4CCFF154 /* SelectionStore.swift in Sources */,
+				331653919511758F1D7AD13F /* ShieldController.swift in Sources */,
+				BA50E9AEC3EFAF91BFB0984E /* NotificationScheduler.swift in Sources */,
+				86E7205381C3FC4551980E04 /* MonitoringPlan.swift in Sources */,
+				8225A27573D415793ADC9F09 /* DeviceActivityMonitorExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAA908C4F7368E1F0984F1EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				096674A0E41F8EF98BA35887 /* AppGroup.swift in Sources */,
+				25C024115A3EE2A5957FAE8C /* AwareTimeFormat.swift in Sources */,
+				80A42667D416397897C33CE5 /* InterventionLevel.swift in Sources */,
+				8B7E52571B24A5D8D94DB79E /* InterventionSettings.swift in Sources */,
+				EDAF895DC52F9BED96356C11 /* InterventionEvent.swift in Sources */,
+				54750BE3BEC94C4E3A9E15B7 /* DayState.swift in Sources */,
+				730D248D4D3D9AB9155A4EB5 /* MathChallenge.swift in Sources */,
+				C10BAB61B1D5CDFA252290C9 /* ShieldPresentation.swift in Sources */,
+				6F7AAEB869EBBB8BD1A7E3CE /* SharedStore.swift in Sources */,
+				C44AD5632969FBB37481556C /* BrandPalette.swift in Sources */,
+				60CE0741D8B4337BDD24CD9A /* SelectionStore.swift in Sources */,
+				0A45D9418A0718AA372D781D /* ShieldController.swift in Sources */,
+				EFACECA0162423BB144E9618 /* ShieldConfigurationExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A2D091EDBE7B209A3E1E1AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				235948AEC874A2C577227E6F /* AppGroup.swift in Sources */,
+				60AFF3EBCA7418B24A28C599 /* AwareTimeFormat.swift in Sources */,
+				123C31CEBF9FC9E0B9EBB387 /* InterventionLevel.swift in Sources */,
+				4F1217E94CABF78AAEE85838 /* InterventionSettings.swift in Sources */,
+				5646522552EBFB7158EEB264 /* InterventionEvent.swift in Sources */,
+				F55DF73A64346B797ACA5F2C /* DayState.swift in Sources */,
+				5F903D427D3219AFD777FFD2 /* MathChallenge.swift in Sources */,
+				477952F86824CE5A5B1E31A4 /* ShieldPresentation.swift in Sources */,
+				58A4E8593FD2F7EE6FE0D45B /* SharedStore.swift in Sources */,
+				3E14446273B7471EAFD76AAD /* AwareTimeActivityAttributes.swift in Sources */,
+				5101F2C572E13283D2CF4C3B /* LiveActivityController.swift in Sources */,
+				363BA14E8CCE5D21A31956A0 /* SelectionStore.swift in Sources */,
+				FB25E0C0477A076AE1648AB2 /* ShieldController.swift in Sources */,
+				6F02B57249998BFA0A5A9066 /* ShieldActionExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B668D91419A4A86A14196493 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7415AD68F5A05ED4F69D06A /* AppGroup.swift in Sources */,
+				D6BDB61908222BF64759371A /* AwareTimeFormat.swift in Sources */,
+				9F1E97FCA2F00C5D39FC7331 /* InterventionLevel.swift in Sources */,
+				D9E218A34C08ADB91E98C630 /* InterventionSettings.swift in Sources */,
+				87C815A7E94277E19F99F83A /* InterventionEvent.swift in Sources */,
+				112B253C8444D56D55FA1976 /* DayState.swift in Sources */,
+				2EB28A8785ECE4BFC7317568 /* MathChallenge.swift in Sources */,
+				4509CDFF35E815F010BDC94E /* ShieldPresentation.swift in Sources */,
+				C4ED8E6A003601ECA312B976 /* SharedStore.swift in Sources */,
+				A90403745B824520BEDD7D88 /* BrandPalette.swift in Sources */,
+				48BE885B329EE678F1A5D663 /* SelectionStore.swift in Sources */,
+				2496215BA222EAF6D26B4181 /* ShieldController.swift in Sources */,
+				3ACC26AF16B3AE5074CF37AA /* ReportContext.swift in Sources */,
+				BAB3D2FBCFEC786DD0141557 /* AwareTimeReportExtension.swift in Sources */,
+				A602396ED6CB727C0BD7F95C /* TotalActivityReport.swift in Sources */,
+				CBDA5E327677F609135719EC /* TotalActivityView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1D158CAE5422B6E86049FE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				365B617154EC7965027B3A72 /* AppGroup.swift in Sources */,
+				A879745E80C70A039506128E /* AwareTimeFormat.swift in Sources */,
+				E31D83528DB3F6D18A754FD5 /* InterventionLevel.swift in Sources */,
+				F8F6ACE1F95D11124399A152 /* InterventionSettings.swift in Sources */,
+				21725D60ED1BE5911C9ED124 /* InterventionEvent.swift in Sources */,
+				C726C107FF44D4E0531110D4 /* DayState.swift in Sources */,
+				7C9F595B755542B41355E584 /* MathChallenge.swift in Sources */,
+				66391A60FC25BFED0FB18400 /* ShieldPresentation.swift in Sources */,
+				2E952A6A22F9A83E5C2D49B0 /* SharedStore.swift in Sources */,
+				46A717F3C52B6A4B417ED77B /* BrandPalette.swift in Sources */,
+				AB37D6165E91CBB3E929C500 /* AwareTimeActivityAttributes.swift in Sources */,
+				2994F7DFACAA1C175AE67D25 /* LiveActivityController.swift in Sources */,
+				5BB2D6C462A4B1502B4207D7 /* AwareTimeWidgetBundle.swift in Sources */,
+				E86A9D6EF8F4DC94CCE78BDA /* AwareTimeLiveActivity.swift in Sources */,
+				784FD718E193E875C6FBF6D4 /* AwareTimeStatusWidget.swift in Sources */,
+				850457EC377EB9FFA2369C8E /* WidgetBackground.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9306D59C370EC0A408469083 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20483AE6F93A9E760D2C2872 /* DeviceActivityMonitorExtension */;
+			targetProxy = BADCBA594DD6A9B56A49DA34 /* PBXContainerItemProxy */;
+		};
+		ED8D2BC7CB62930149152285 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F72699EE546ACCAD7A90F22 /* ShieldConfigurationExtension */;
+			targetProxy = 96B2C67B0BCAA2C620E808E9 /* PBXContainerItemProxy */;
+		};
+		03BDA00A5B95EB018AC71E4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 076A1EF83BB9138BA8B67232 /* ShieldActionExtension */;
+			targetProxy = 404AD4E494835E3AA493FE35 /* PBXContainerItemProxy */;
+		};
+		6D1FF8EB8127925B0E7E2FA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2AD637E9957CCC416E0B76E /* DeviceActivityReportExtension */;
+			targetProxy = 1E8BE97B5AB21DDCB0852F8A /* PBXContainerItemProxy */;
+		};
+		E9F1453076FBDE956A238A56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CE3220FDE3822107D54CA51 /* AwareTimeWidget */;
+			targetProxy = DC40AF2EA75F448E4A368A30 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4A43692AD8BCEEB8B727C85B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_GROUP_ID = "group.$(BUNDLE_ID_PREFIX).awaretime";
+				BUNDLE_ID_PREFIX = com.deocomate;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		C28449456A5A705A7479770B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_GROUP_ID = "group.$(BUNDLE_ID_PREFIX).awaretime";
+				BUNDLE_ID_PREFIX = com.deocomate;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		5F520AA130702FFF51099C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AwareTime/AwareTime.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AwareTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		A3BAE78BBDA07BDA1983803B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AwareTime/AwareTime.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AwareTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		257A30A0D8175FD1110A2BBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.monitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		4CB220C5199A4AA413D9E325 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.monitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		06F2E58C1028B1F9677B4449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShieldConfigurationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.shieldconfig";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		5A17F949FA738BAB95FFEDEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShieldConfigurationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.shieldconfig";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		58CDA50735E92133A761415F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShieldActionExtension/ShieldActionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShieldActionExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.shieldaction";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		89BBBDD312B4A0A12EA8F2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShieldActionExtension/ShieldActionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShieldActionExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.shieldaction";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		20662C802B6B1967EF758717 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityReportExtension/DeviceActivityReportExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DeviceActivityReportExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.report";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		7508ED60B111CA5E818E1BFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityReportExtension/DeviceActivityReportExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DeviceActivityReportExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.report";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		C44C40F8E781E6E298A1A086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AwareTimeWidget/AwareTimeWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AwareTimeWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		13FA28DFBC74FB2CB261F884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AwareTimeWidget/AwareTimeWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AwareTimeWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).awaretime.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F4E3D13C2320EDA50221924 /* Build configuration list for PBXProject "AwareTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A43692AD8BCEEB8B727C85B /* Debug */,
+				C28449456A5A705A7479770B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B9A8849F71AFEBB155ED67F /* Build configuration list for PBXNativeTarget "AwareTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F520AA130702FFF51099C8C /* Debug */,
+				A3BAE78BBDA07BDA1983803B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		792FDF21AB7093E1FF8B6264 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				257A30A0D8175FD1110A2BBC /* Debug */,
+				4CB220C5199A4AA413D9E325 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		494CF84CACC2CF4322251C43 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06F2E58C1028B1F9677B4449 /* Debug */,
+				5A17F949FA738BAB95FFEDEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B576B847E208F156BD85364 /* Build configuration list for PBXNativeTarget "ShieldActionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58CDA50735E92133A761415F /* Debug */,
+				89BBBDD312B4A0A12EA8F2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96DED87C7E5910D64F2D273A /* Build configuration list for PBXNativeTarget "DeviceActivityReportExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20662C802B6B1967EF758717 /* Debug */,
+				7508ED60B111CA5E818E1BFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22913D2EEFC00B55A7415FF2 /* Build configuration list for PBXNativeTarget "AwareTimeWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C44C40F8E781E6E298A1A086 /* Debug */,
+				13FA28DFBC74FB2CB261F884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+}
