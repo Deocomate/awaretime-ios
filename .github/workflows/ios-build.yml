@@ -1,0 +1,222 @@
+name: iOS Build
+
+on:
+  push:
+    branches: ["main", "claude/**"]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      signed:
+        description: "Cũng tạo IPA đã ký (cần secrets App Store Connect)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: ios-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # The .xcodeproj is generated from Tools/generate_xcodeproj.py and committed.
+  # This job makes sure the committed copy still matches the sources.
+  project-check:
+    name: Xcode project in sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate and validate project
+        run: |
+          python3 Tools/generate_xcodeproj.py
+          python3 Tools/validate_xcodeproj.py
+
+      - name: Fail if the committed project drifted
+        run: |
+          if ! git diff --quiet -- AwareTime.xcodeproj; then
+            echo "::error::AwareTime.xcodeproj is stale. Run 'python3 Tools/generate_xcodeproj.py' and commit the result."
+            git --no-pager diff --stat -- AwareTime.xcodeproj
+            exit 1
+          fi
+
+  build:
+    name: Build + unsigned IPA
+    runs-on: macos-15
+    needs: project-check
+    timeout-minutes: 60
+    env:
+      PROJECT: AwareTime.xcodeproj
+      SCHEME: AwareTime
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          xcodebuild -showsdks | grep -i iphoneos || true
+
+      # Catches compile errors fast, and builds every embedded extension
+      # because the app target depends on all of them.
+      - name: Compile for Simulator
+        timeout-minutes: 30
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build-sim \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Build for device (unsigned)
+        timeout-minutes: 30
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            DEVELOPMENT_TEAM="" \
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            clean build
+
+      - name: Package .ipa
+        id: package
+        run: |
+          set -euo pipefail
+          APP_PATH="$(find build/Build/Products/Release-iphoneos -maxdepth 1 -name '*.app' | head -n 1)"
+          if [ -z "$APP_PATH" ]; then
+            echo "::error::No .app product was produced"
+            ls -R build/Build/Products || true
+            exit 1
+          fi
+          echo "Built: $APP_PATH"
+          echo "Embedded extensions:"
+          ls -1 "$APP_PATH/PlugIns" || echo "  (none — this is a problem)"
+
+          VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP_PATH/Info.plist")"
+          BUILD_NO="${GITHUB_RUN_NUMBER}"
+          NAME="AwareTime-${VERSION}-${BUILD_NO}-unsigned"
+
+          rm -rf payload && mkdir -p payload/Payload
+          cp -R "$APP_PATH" payload/Payload/
+          (cd payload && zip -qry "../${NAME}.ipa" Payload)
+          echo "ipa=${NAME}.ipa" >> "$GITHUB_OUTPUT"
+          ls -lh "${NAME}.ipa"
+
+      - name: Upload unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: awaretime-unsigned-ipa
+          path: ${{ steps.package.outputs.ipa }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload .app bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: awaretime-app-bundle
+          path: build/Build/Products/Release-iphoneos/AwareTime.app
+          retention-days: 14
+
+      - name: Attach IPA to release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" "${{ steps.package.outputs.ipa }}" \
+            --title "AwareTime ${GITHUB_REF_NAME}" \
+            --notes "IPA chưa ký. Xem docs/BUILD.md để ký lại và cài lên thiết bị." \
+            || gh release upload "${GITHUB_REF_NAME}" "${{ steps.package.outputs.ipa }}" --clobber
+
+  # Optional: a properly signed, installable IPA.
+  # Needs these repository secrets:
+  #   APPSTORE_API_KEY_ID, APPSTORE_API_ISSUER_ID, APPSTORE_API_PRIVATE_KEY, APPLE_TEAM_ID
+  signed-ipa:
+    name: Signed IPA (optional)
+    runs-on: macos-15
+    needs: project-check
+    timeout-minutes: 60
+    if: github.event_name == 'workflow_dispatch' && inputs.signed
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for signing secrets
+        id: secrets
+        env:
+          KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APPSTORE_API_ISSUER_ID }}
+          PRIVATE_KEY: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+          TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          if [ -z "$KEY_ID" ] || [ -z "$ISSUER_ID" ] || [ -z "$PRIVATE_KEY" ] || [ -z "$TEAM_ID" ]; then
+            echo "::warning::Thiếu secrets App Store Connect, bỏ qua bước ký. Xem docs/BUILD.md."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write API key
+        if: steps.secrets.outputs.ready == 'true'
+        env:
+          PRIVATE_KEY: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+          KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+        run: |
+          mkdir -p ~/private_keys
+          printf '%s' "$PRIVATE_KEY" > ~/private_keys/AuthKey_${KEY_ID}.p8
+          chmod 600 ~/private_keys/AuthKey_${KEY_ID}.p8
+
+      - name: Archive with automatic signing
+        if: steps.secrets.outputs.ready == 'true'
+        env:
+          KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APPSTORE_API_ISSUER_ID }}
+          TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project AwareTime.xcodeproj \
+            -scheme AwareTime \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath build/AwareTime.xcarchive \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath ~/private_keys/AuthKey_${KEY_ID}.p8 \
+            -authenticationKeyID "${KEY_ID}" \
+            -authenticationKeyIssuerID "${ISSUER_ID}" \
+            DEVELOPMENT_TEAM="${TEAM_ID}" \
+            archive
+
+      - name: Export ad-hoc IPA
+        if: steps.secrets.outputs.ready == 'true'
+        env:
+          KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APPSTORE_API_ISSUER_ID }}
+          TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          set -o pipefail
+          sed "s/__TEAM_ID__/${TEAM_ID}/" Tools/ExportOptions-adhoc.plist > build/ExportOptions.plist
+          xcodebuild -exportArchive \
+            -archivePath build/AwareTime.xcarchive \
+            -exportPath build/export \
+            -exportOptionsPlist build/ExportOptions.plist \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath ~/private_keys/AuthKey_${KEY_ID}.p8 \
+            -authenticationKeyID "${KEY_ID}" \
+            -authenticationKeyIssuerID "${ISSUER_ID}"
+          ls -lh build/export
+
+      - name: Upload signed IPA
+        if: steps.secrets.outputs.ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: awaretime-signed-ipa
+          path: build/export/*.ipa
+          if-no-files-found: error
+          retention-days: 30

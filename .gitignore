@@ -1,0 +1,18 @@
+# Xcode
+build/
+build-sim/
+payload/
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.xcarchive
+*.ipa
+*.dSYM.zip
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
