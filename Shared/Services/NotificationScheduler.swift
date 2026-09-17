@@ -20,8 +20,11 @@ enum NotificationScheduler {
 
     static func requestAuthorization() async -> Bool {
         do {
+            // Time-sensitive delivery comes from the
+            // `com.apple.developer.usernotifications.time-sensitive`
+            // entitlement; the matching request option is deprecated.
             return try await UNUserNotificationCenter.current()
-                .requestAuthorization(options: [.alert, .sound, .badge, .timeSensitive])
+                .requestAuthorization(options: [.alert, .sound, .badge])
         } catch {
             return false
         }
