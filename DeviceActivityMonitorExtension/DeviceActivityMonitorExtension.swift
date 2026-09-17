@@ -72,7 +72,7 @@ final class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     ) {
         super.eventWillReachThresholdWarning(event, activity: activity)
         guard activity == MonitoringPlan.activityName,
-              case .level(.shield)? = MonitoringPlan.kind(of: event) else { return }
+              MonitoringPlan.kind(of: event) == .level(.shield) else { return }
 
         let settings = SharedStore.settings.normalized()
         guard settings.notificationsEnabled else { return }

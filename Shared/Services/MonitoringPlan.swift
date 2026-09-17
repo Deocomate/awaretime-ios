@@ -61,11 +61,16 @@ enum MonitoringPlan {
 
     // MARK: - Schedule
 
+    /// Minutes of advance notice before a threshold is reached. Drives
+    /// `DeviceActivityMonitor.eventWillReachThresholdWarning`.
+    static let warningLeadMinutes = 5
+
     static func schedule() -> DeviceActivitySchedule {
         DeviceActivitySchedule(
             intervalStart: DateComponents(hour: 0, minute: 0),
             intervalEnd: DateComponents(hour: 23, minute: 59),
-            repeats: true
+            repeats: true,
+            warningTime: DateComponents(minute: warningLeadMinutes)
         )
     }
 
