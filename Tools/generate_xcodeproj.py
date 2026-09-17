@@ -72,6 +72,7 @@ SHARED_REPORT = ["Shared/Services/ReportContext.swift"]
 APP_SOURCES = [
     "AwareTime/AwareTimeApp.swift",
     "AwareTime/Services/AuthorizationService.swift",
+    "AwareTime/Services/ProvisioningProfileInspector.swift",
     "AwareTime/Services/MonitoringCoordinator.swift",
     "AwareTime/Services/DemoModeController.swift",
     "AwareTime/ViewModels/UsageViewModel.swift",

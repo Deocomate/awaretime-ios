@@ -241,6 +241,36 @@ struct DiagnosticsView: View {
                 Section("Bundle") {
                     row("Bundle id", Bundle.main.bundleIdentifier ?? "—")
                     row("Phiên bản", SettingsView.versionString)
+                    row("Môi trường", ProvisioningProfileInspector.isSimulator ? "Simulator" : "Thiết bị thật")
+                }
+
+                // The usual reason Screen Time refuses to talk to the app.
+                Section {
+                    HStack {
+                        Text("Family Controls")
+                        Spacer()
+                        StatusPill(
+                            text: familyControlsText,
+                            systemImage: familyControlsSymbol,
+                            tone: familyControlsTone
+                        )
+                    }
+                    if let profile = ProvisioningProfileInspector.profile {
+                        row("Profile", profile.name ?? "—")
+                        row("Team", profile.teamIdentifier ?? "—")
+                        row("Loại", profile.isDevelopment ? "Development" : "Distribution / Ad-hoc")
+                        if let expiry = profile.expirationDate {
+                            row("Hết hạn", AwareTimeFormat.dayAndClock(expiry) + (profile.isExpired ? " (ĐÃ HẾT)" : ""))
+                        }
+                        row("Time-Sensitive", profile.hasTimeSensitiveNotifications ? "Có" : "Không")
+                        row("App Groups", profile.appGroups.isEmpty ? "—" : profile.appGroups.joined(separator: "\n"))
+                    } else {
+                        row("Provisioning profile", "Không đọc được")
+                    }
+                } header: {
+                    Text("Entitlement của bản build")
+                } footer: {
+                    Text(entitlementFooter)
                 }
                 Section("Screen Time") {
                     row("Quyền", viewModel.screenTimeStatus.vietnameseTitle)
@@ -264,6 +294,46 @@ struct DiagnosticsView: View {
                     Button("Đóng") { dismiss() }
                 }
             }
+        }
+    }
+
+    // MARK: - Family Controls entitlement
+
+    private var familyControlsText: String {
+        switch ProvisioningProfileInspector.familyControlsState {
+        case .granted: return "Có trong profile"
+        case .missing: return "THIẾU"
+        case .indeterminate: return "Không xác định"
+        }
+    }
+
+    private var familyControlsSymbol: String {
+        switch ProvisioningProfileInspector.familyControlsState {
+        case .granted: return "checkmark"
+        case .missing: return "xmark"
+        case .indeterminate: return "questionmark"
+        }
+    }
+
+    private var familyControlsTone: StatusPill.Tone {
+        switch ProvisioningProfileInspector.familyControlsState {
+        case .granted: return .good
+        case .missing: return .bad
+        case .indeterminate: return .warn
+        }
+    }
+
+    private var entitlementFooter: String {
+        if ProvisioningProfileInspector.isSimulator {
+            return "Simulator không hỗ trợ Screen Time API — việc cấp quyền sẽ luôn thất bại. Dùng “Chạy thử nhanh” để kiểm tra giao diện."
+        }
+        switch ProvisioningProfileInspector.familyControlsState {
+        case .granted:
+            return "Bản build có quyền nói chuyện với tiến trình Screen Time."
+        case .missing:
+            return "Đây chính là nguyên nhân của lỗi “Không thể liên lạc với ứng dụng trợ giúp”. Phải ký lại app bằng provisioning profile có bật Family Controls."
+        case .indeterminate:
+            return "Không có embedded.mobileprovision — thường là bản App Store hoặc bản chạy trên Simulator."
         }
     }
 

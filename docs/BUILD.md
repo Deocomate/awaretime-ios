@@ -152,8 +152,62 @@ thập dữ liệu (AwareTime không có code mạng).
 
 ## 7. Xử lý sự cố
 
+
+### "Không thể liên lạc với ứng dụng trợ giúp"
+
+Đây là bản tiếng Việt của *"Couldn't communicate with a helper application"*
+(`NSCocoaErrorDomain` code 4099 — `NSXPCConnectionInvalid`). App không mở được
+kết nối XPC tới tiến trình Screen Time của hệ thống. Hai nguyên nhân chiếm gần
+như toàn bộ các trường hợp:
+
+**1. Đang chạy trên Simulator.** Family Controls không tồn tại ở đó. Phải chạy
+trên iPhone/iPad thật.
+
+**2. Binary đã cài không thực sự có entitlement Family Controls.** File
+`.entitlements` trong repo chỉ là *yêu cầu*; quyền chỉ có hiệu lực khi
+provisioning profile lúc ký cũng cấp nó. Bản IPA chưa ký rồi ký lại bằng
+Sideloadly/AltStore rất hay rơi vào đây, vì các công cụ đó tự tạo App ID mới
+mà không bật Family Controls.
+
+Mở **Cài đặt → Thông tin kỹ thuật** trong app: mục *Entitlement của bản build*
+cho biết chính xác profile đang dùng có `com.apple.developer.family-controls`
+hay không. App đọc `embedded.mobileprovision` của chính nó nên đây là câu trả
+lời thật, không phải suy đoán.
+
+Kiểm tra từ máy Mac:
+
+```bash
+# entitlement thực sự có trong app đã build
+codesign -d --entitlements :- /đường/dẫn/AwareTime.app | grep -A1 family-controls
+
+# hoặc soi provisioning profile
+security cms -D -i /đường/dẫn/AwareTime.app/embedded.mobileprovision \
+  | plutil -extract Entitlements xml1 -o - -
+```
+
+Nếu không thấy `com.apple.developer.family-controls`:
+
+1. Vào [developer.apple.com → Identifiers](https://developer.apple.com/account/resources/identifiers/list),
+   chọn App ID của app **và của cả 4 extension Screen Time**, tick
+   **Family Controls**.
+2. Tạo lại provisioning profile cho từng App ID.
+3. Ký lại app bằng profile mới (hoặc để Xcode tự làm: Signing & Capabilities →
+   chọn Team → build lại lên thiết bị).
+
+Cách nhanh nhất để có bản chạy được: mở project trong Xcode, chọn Team của bạn
+cho cả 6 target rồi ⌘R lên iPhone. Xcode sẽ tự đăng ký App ID và bật capability.
+
+> Lưu ý: **Family Controls cần tài khoản Apple Developer Program có phí.** Tài
+> khoản Apple ID miễn phí (personal team) không bật được capability này, nên
+> app sẽ cài và mở được nhưng bước cấp quyền luôn báo lỗi trên. Khi đó hãy dùng
+> **Chạy thử nhanh** ở tab Hôm nay để kiểm tra thông báo, Live Activity và giao
+> diện màn chắn.
+
+### Bảng tra nhanh
+
 | Triệu chứng | Nguyên nhân thường gặp |
 |---|---|
+| "Không thể liên lạc với ứng dụng trợ giúp" | Simulator, hoặc profile ký app không có Family Controls — xem mục ngay trên |
 | `requestAuthorization` lỗi `unavailable` | Đang chạy Simulator, hoặc bản build thiếu entitlement Family Controls |
 | `invalidAccountType` | Chưa đăng nhập iCloud, hoặc dùng tài khoản con trong Family Sharing mà chọn `.individual` |
 | Thẻ **Thiếu App Group** trong onboarding | Entitlement App Groups chưa được ký vào bản build; kiểm tra Signing & Capabilities của cả 6 target |

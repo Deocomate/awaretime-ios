@@ -26,6 +26,7 @@
 		5947FDFF936D1CF23200C759 /* ReportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4E116B804059DCEE2D418A /* ReportContext.swift */; };
 		12C43E256E3F85B2CEDF14E6 /* AwareTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF5FA54E4DE8251F34DD32 /* AwareTimeApp.swift */; };
 		89DF5EA96404D2CFC33EF4BD /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3983A8A15A56F33B18AD925 /* AuthorizationService.swift */; };
+		0D4DA7F30D2E6CC7337F65AB /* ProvisioningProfileInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BEC6E5B8F5CB8B5EE0D6C6 /* ProvisioningProfileInspector.swift */; };
 		AC0A4E7BD1A986EA533E7080 /* MonitoringCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC13395A2670041AE6BAF4F /* MonitoringCoordinator.swift */; };
 		A4E8F76598325D62AAE792CA /* DemoModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8894CD45D946870EE137325 /* DemoModeController.swift */; };
 		A9EB85ABEC10678124CD57C4 /* UsageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2CCCD6437A2B818BE5E0FE /* UsageViewModel.swift */; };
@@ -189,6 +190,7 @@
 		B3983A8A15A56F33B18AD925 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		A8894CD45D946870EE137325 /* DemoModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoModeController.swift; sourceTree = "<group>"; };
 		CCC13395A2670041AE6BAF4F /* MonitoringCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringCoordinator.swift; sourceTree = "<group>"; };
+		C3BEC6E5B8F5CB8B5EE0D6C6 /* ProvisioningProfileInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningProfileInspector.swift; sourceTree = "<group>"; };
 		CA2CCCD6437A2B818BE5E0FE /* UsageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageViewModel.swift; sourceTree = "<group>"; };
 		84DB5EDE6BCBC399D03A1DA3 /* AppPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPickerView.swift; sourceTree = "<group>"; };
 		FE11C5B9798E25CD4A4B26DD /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				B3983A8A15A56F33B18AD925 /* AuthorizationService.swift */,
 				A8894CD45D946870EE137325 /* DemoModeController.swift */,
 				CCC13395A2670041AE6BAF4F /* MonitoringCoordinator.swift */,
+				C3BEC6E5B8F5CB8B5EE0D6C6 /* ProvisioningProfileInspector.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				5947FDFF936D1CF23200C759 /* ReportContext.swift in Sources */,
 				12C43E256E3F85B2CEDF14E6 /* AwareTimeApp.swift in Sources */,
 				89DF5EA96404D2CFC33EF4BD /* AuthorizationService.swift in Sources */,
+				0D4DA7F30D2E6CC7337F65AB /* ProvisioningProfileInspector.swift in Sources */,
 				AC0A4E7BD1A986EA533E7080 /* MonitoringCoordinator.swift in Sources */,
 				A4E8F76598325D62AAE792CA /* DemoModeController.swift in Sources */,
 				A9EB85ABEC10678124CD57C4 /* UsageViewModel.swift in Sources */,

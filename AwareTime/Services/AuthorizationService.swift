@@ -38,7 +38,19 @@ enum AuthorizationService {
     /// cases, because the case list has changed between SDK releases and a
     /// friendly message is not worth a build break.
     static func describe(_ error: Error) -> String {
+        let nsError = error as NSError
         let signature = String(describing: error)
+
+        // "Không thể liên lạc với ứng dụng trợ giúp" / "Couldn't communicate
+        // with a helper application": the XPC connection to the Screen Time
+        // daemon was refused or dropped. NSXPCConnectionInterrupted (4097)
+        // and NSXPCConnectionInvalid (4099) both surface this way.
+        let isHelperFailure = (nsError.domain == NSCocoaErrorDomain && (nsError.code == 4097 || nsError.code == 4099))
+            || signature.localizedCaseInsensitiveContains("helper application")
+            || nsError.localizedDescription.localizedCaseInsensitiveContains("ứng dụng trợ giúp")
+        if isHelperFailure {
+            return helperConnectionAdvice()
+        }
 
         if signature.contains("invalidAccountType") {
             return "Tài khoản iCloud không phù hợp. Hãy đăng nhập iCloud và bật Thời gian sử dụng trong Cài đặt."
@@ -56,10 +68,7 @@ enum AuthorizationService {
             return "Lỗi mạng khi xác thực quyền Screen Time. Thử lại khi có kết nối."
         }
         if signature.contains("unavailable") {
-            return """
-            Không dùng được Screen Time API trên bản build này.
-            Thường là do thiếu entitlement “Family Controls” hoặc đang chạy trên Simulator. Xem docs/BUILD.md.
-            """
+            return helperConnectionAdvice()
         }
 
         if error is FamilyControlsError {
@@ -72,6 +81,53 @@ enum AuthorizationService {
         }
 
         return error.localizedDescription
+    }
+
+    /// Explains a failed XPC handshake by looking at what this build is
+    /// actually entitled to, instead of repeating the opaque system message.
+    static func helperConnectionAdvice() -> String {
+        if ProvisioningProfileInspector.isSimulator {
+            return """
+            Không liên lạc được với tiến trình Screen Time của hệ thống.
+
+            Nguyên nhân: đang chạy trên Simulator. Family Controls chỉ hoạt động trên iPhone/iPad thật.
+
+            Hãy chạy trên thiết bị thật, hoặc dùng “Chạy thử nhanh” ở tab Hôm nay để kiểm tra giao diện và thông báo.
+            """
+        }
+
+        switch ProvisioningProfileInspector.familyControlsState {
+        case .missing:
+            let name = ProvisioningProfileInspector.profile?.name ?? "không rõ"
+            return """
+            Không liên lạc được với tiến trình Screen Time của hệ thống.
+
+            Nguyên nhân: bản build này KHÔNG có entitlement “com.apple.developer.family-controls”.
+            Profile đang dùng: \(name)
+
+            Cách sửa: bật Family Controls cho App ID tại developer.apple.com → Identifiers, tạo lại provisioning profile rồi ký lại app. Nếu bạn ký lại file IPA bằng Sideloadly/AltStore, công cụ đó phải dùng profile có quyền này. Xem docs/BUILD.md mục 7.
+            """
+
+        case .granted:
+            return """
+            Không liên lạc được với tiến trình Screen Time của hệ thống, dù bản build đã có entitlement Family Controls.
+
+            Hãy thử theo thứ tự:
+            1. Cài đặt → [tên bạn]: đã đăng nhập iCloud chưa.
+            2. Cài đặt → Thời gian sử dụng: bật lên (không cần đặt mật mã).
+            3. Nếu thiết bị nằm trong Family Sharing với vai trò trẻ em, quyền phải do phụ huynh cấp.
+            4. Khởi động lại thiết bị — tiến trình Screen Time đôi khi cần khởi động lại.
+            """
+
+        case .indeterminate:
+            return """
+            Không liên lạc được với tiến trình Screen Time của hệ thống.
+
+            Không đọc được provisioning profile của bản build này nên chưa xác định được có entitlement Family Controls hay không.
+
+            Hãy kiểm tra: đã đăng nhập iCloud, đã bật Thời gian sử dụng trong Cài đặt, và app được ký bằng profile có bật Family Controls. Xem docs/BUILD.md mục 7.
+            """
+        }
     }
 }
 
